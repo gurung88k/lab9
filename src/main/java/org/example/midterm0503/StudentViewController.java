@@ -56,25 +56,25 @@ public class StudentViewController {
 
     @FXML
     private void applyFilter() {
-        // Clear the filtered students list
+        // clearing the filtered list
         filteredStudents.clear();
 
-        // Apply filters based on checkboxes and ComboBox selection
+        // filters being applied based on the checkbox selection
         if (ontarioCheckBox.isSelected()) {
-            // Filter for Ontario students
+            //filter for ontario students
             for (Student student : students) {
                 if (student.getProvince().equalsIgnoreCase("ON")) {
                     filteredStudents.add(student);
                 }
             }
         } else {
-            // No filtering based on province
+            // everything being displayed
             filteredStudents.addAll(students);
         }
 
-        // Apply Honour Roll filter if selected
+        // filter for honourroll
         if (honourRollCheckBox.isSelected()) {
-            // Filter for students with average grade >= 80
+            // average grade >= 80
             Iterator<Student> iterator = filteredStudents.iterator();
             while (iterator.hasNext()) {
                 Student student = iterator.next();
@@ -84,10 +84,23 @@ public class StudentViewController {
             }
         }
 
-        // Update TableView with filtered data
+        // filter for areacode
+        String selectedAreaCode = areaCodeComboBox.getSelectionModel().getSelectedItem();
+        if (!"All".equals(selectedAreaCode)) {
+
+            Iterator<Student> iterator = filteredStudents.iterator();
+            while (iterator.hasNext()) {
+                Student student = iterator.next();
+                if (!student.getTelephone().startsWith(selectedAreaCode)) {
+                    iterator.remove();
+                }
+            }
+        }
+
+
         tableView.setItems(filteredStudents);
 
-        // Update number of students label
+
         numOfStudentsLabel.setText("Number of Students: " + filteredStudents.size());
     }
 
@@ -118,7 +131,7 @@ public class StudentViewController {
 
     @FXML
     void initialize() {
-        // Populate the ComboBox with distinct sorted area codes
+        //combox update
         Set<String> areaCodes = new TreeSet<>();
         for (Student student : students) {
             String telephone = student.getTelephone();
@@ -126,9 +139,10 @@ public class StudentViewController {
                 areaCodes.add(telephone.substring(0, 3));
             }
         }
+        areaCodes.add("All"); // Add "All" option
         areaCodeComboBox.setItems(FXCollections.observableArrayList(areaCodes));
 
-        // Populate the TableView with all students
+        // populating the table
         getAllStudents();
         tableView.setItems(students);
 
@@ -142,7 +156,7 @@ public class StudentViewController {
         avgGradeCol.setCellValueFactory(cellData -> cellData.getValue().avgGradeProperty().asObject());
         majorCol.setCellValueFactory(cellData -> cellData.getValue().majorProperty());
 
-        // Bind numOfStudentsLabel text property to the size of the students list
+        // number of students in total
         numOfStudentsLabel.textProperty().bind(Bindings.createStringBinding(() ->
                 "Number of Students: " + students.size(), students));
     }
