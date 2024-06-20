@@ -52,10 +52,43 @@ public class StudentViewController {
     private ComboBox<String> areaCodeComboBox;
 
     private ObservableList<Student> students = FXCollections.observableArrayList();
+    private ObservableList<Student> filteredStudents = FXCollections.observableArrayList();
 
     @FXML
     private void applyFilter() {
-        // Apply filter logic here
+        // Clear the filtered students list
+        filteredStudents.clear();
+
+        // Apply filters based on checkboxes and ComboBox selection
+        if (ontarioCheckBox.isSelected()) {
+            // Filter for Ontario students
+            for (Student student : students) {
+                if (student.getProvince().equalsIgnoreCase("ON")) {
+                    filteredStudents.add(student);
+                }
+            }
+        } else {
+            // No filtering based on province
+            filteredStudents.addAll(students);
+        }
+
+        // Apply Honour Roll filter if selected
+        if (honourRollCheckBox.isSelected()) {
+            // Filter for students with average grade >= 80
+            Iterator<Student> iterator = filteredStudents.iterator();
+            while (iterator.hasNext()) {
+                Student student = iterator.next();
+                if (student.getAvgGrade() < 80) {
+                    iterator.remove();
+                }
+            }
+        }
+
+        // Update TableView with filtered data
+        tableView.setItems(filteredStudents);
+
+        // Update number of students label
+        numOfStudentsLabel.setText("Number of Students: " + filteredStudents.size());
     }
 
     private void getAllStudents() {
