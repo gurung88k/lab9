@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8be4c93a-c1b2-4275-8d10-a8995939a0ce" name="Changes" comment="midterm">
+    <list default="true" id="8be4c93a-c1b2-4275-8d10-a8995939a0ce" name="Changes" comment="2a">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/midterm0503/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/midterm0503/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/midterm0503/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/midterm0503/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/midterm0503/StudentViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/midterm0503/StudentViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +39,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.HelloApplication.executor": "Run",
     "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "true",
@@ -85,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1718910122742</updated>
-      <workItem from="1718910123853" duration="3886000" />
+      <workItem from="1718910123853" duration="4162000" />
     </task>
     <task id="LOCAL-00001" summary="midterm">
       <option name="closed" value="true" />
@@ -103,7 +101,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718911048430</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="2a">
+      <option name="closed" value="true" />
+      <created>1718914043195</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718914043195</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +117,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="midterm" />
-    <option name="LAST_COMMIT_MESSAGE" value="midterm" />
+    <MESSAGE value="2a" />
+    <option name="LAST_COMMIT_MESSAGE" value="2a" />
   </component>
 </project>

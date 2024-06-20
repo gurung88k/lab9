@@ -1,4 +1,5 @@
 package org.example.midterm0503;
+import javafx.beans.binding.Bindings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,8 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class StudentViewController {
     @FXML
@@ -85,7 +85,16 @@ public class StudentViewController {
 
     @FXML
     void initialize() {
-        areaCodeComboBox.getItems().add("All");
+        // Populate the ComboBox with distinct sorted area codes
+        Set<String> areaCodes = new TreeSet<>();
+        for (Student student : students) {
+            String telephone = student.getTelephone();
+            if (telephone.length() >= 3) {
+                areaCodes.add(telephone.substring(0, 3));
+            }
+        }
+        areaCodeComboBox.setItems(FXCollections.observableArrayList(areaCodes));
+
         // Populate the TableView with all students
         getAllStudents();
         tableView.setItems(students);
@@ -99,5 +108,9 @@ public class StudentViewController {
         provinceCol.setCellValueFactory(cellData -> cellData.getValue().provinceProperty());
         avgGradeCol.setCellValueFactory(cellData -> cellData.getValue().avgGradeProperty().asObject());
         majorCol.setCellValueFactory(cellData -> cellData.getValue().majorProperty());
+
+        // Bind numOfStudentsLabel text property to the size of the students list
+        numOfStudentsLabel.textProperty().bind(Bindings.createStringBinding(() ->
+                "Number of Students: " + students.size(), students));
     }
 }
