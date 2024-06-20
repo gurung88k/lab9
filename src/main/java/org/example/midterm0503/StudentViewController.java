@@ -56,54 +56,44 @@ public class StudentViewController {
 
     @FXML
     private void applyFilter() {
-        // clearing the filtered list
+        // clearing the students list
         filteredStudents.clear();
 
-        // filters being applied based on the checkbox selection
-        if (ontarioCheckBox.isSelected()) {
-            //filter for ontario students
-            for (Student student : students) {
-                if (student.getProvince().equalsIgnoreCase("ON")) {
-                    filteredStudents.add(student);
-                }
+        // Apply Honour Roll filter if selected
+        boolean applyHonourRollFilter = honourRollCheckBox.isSelected();
+
+        // Apply filters based on checkboxes and ComboBox selection
+        for (Student student : students) {
+            boolean includeStudent = true;
+
+            // Check if Ontario filter is selected
+            if (ontarioCheckBox.isSelected() && !student.getProvince().equalsIgnoreCase("ON")) {
+                includeStudent = false;
             }
-        } else {
-            // everything being displayed
-            filteredStudents.addAll(students);
-        }
 
-        // filter for honourroll
-        if (honourRollCheckBox.isSelected()) {
-            // average grade >= 80
-            Iterator<Student> iterator = filteredStudents.iterator();
-            while (iterator.hasNext()) {
-                Student student = iterator.next();
-                if (student.getAvgGrade() < 80) {
-                    iterator.remove();
-                }
+            // Check if Honour Roll filter is selected
+            if (applyHonourRollFilter && student.getAvgGrade() < 80) {
+                includeStudent = false;
             }
-        }
 
-        // filter for areacode
-        String selectedAreaCode = areaCodeComboBox.getSelectionModel().getSelectedItem();
-        if (!"All".equals(selectedAreaCode)) {
+            // Check if area code filter is selected
+            String selectedAreaCode = areaCodeComboBox.getSelectionModel().getSelectedItem();
+            if (!"All".equals(selectedAreaCode) && !student.getTelephone().startsWith(selectedAreaCode)) {
+                includeStudent = false;
+            }
 
-            Iterator<Student> iterator = filteredStudents.iterator();
-            while (iterator.hasNext()) {
-                Student student = iterator.next();
-                if (!student.getTelephone().startsWith(selectedAreaCode)) {
-                    iterator.remove();
-                }
+            // Add the student if it passes all filters
+            if (includeStudent) {
+                filteredStudents.add(student);
             }
         }
 
-
+        // Update TableView with filtered data
         tableView.setItems(filteredStudents);
 
-
+        // Update number of students label
         numOfStudentsLabel.setText("Number of Students: " + filteredStudents.size());
     }
-
     private void getAllStudents() {
         String url = "jdbc:mysql://database.c10eksou8rzh.us-east-1.rds.amazonaws.com:3306/yourDatabaseName";
         String user = "admin";
