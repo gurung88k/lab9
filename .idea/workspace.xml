@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8be4c93a-c1b2-4275-8d10-a8995939a0ce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/midterm0503/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/midterm0503/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/midterm0503/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/midterm0503/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/midterm0503/StudentViewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/midterm0503/hello-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/org/example/midterm0503/student-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/styles.css" afterDir="false" />
-    </list>
+    <list default="true" id="8be4c93a-c1b2-4275-8d10-a8995939a0ce" name="Changes" comment="midterm" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,11 +67,32 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1718910122742</updated>
-      <workItem from="1718910123853" duration="875000" />
+      <workItem from="1718910123853" duration="967000" />
     </task>
+    <task id="LOCAL-00001" summary="midterm">
+      <option name="closed" value="true" />
+      <created>1718911036405</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1718911036405</updated>
+    </task>
+    <task id="LOCAL-00002" summary="midterm">
+      <option name="closed" value="true" />
+      <created>1718911048430</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1718911048430</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="midterm" />
+    <option name="LAST_COMMIT_MESSAGE" value="midterm" />
   </component>
 </project>
