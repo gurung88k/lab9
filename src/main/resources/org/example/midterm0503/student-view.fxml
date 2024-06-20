@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@../../../../../../../project_files/project_files/styles.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.f21comp1011lhmidtermstudentversion.StudentViewController">
+   <children>
+      <BorderPane prefHeight="600.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <TableView fx:id="tableView" prefHeight="200.0" prefWidth="835.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="studentNumCol" prefWidth="75.0" text="Student #" />
+                <TableColumn fx:id="firstNameCol" prefWidth="75.0" text="First Name" />
+                  <TableColumn fx:id="lastNameCol" prefWidth="75.0" text="Last Name" />
+                  <TableColumn fx:id="telephoneCol" prefWidth="75.0" text="Telephone" />
+                  <TableColumn fx:id="addressCol" prefWidth="75.0" text="Address" />
+                  <TableColumn fx:id="provinceCol" prefWidth="75.0" text="Province" />
+                  <TableColumn fx:id="avgGradeCol" prefWidth="75.0" text="Avg Grade" />
+                  <TableColumn fx:id="majorCol" prefWidth="75.0" text="Major" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </center>
+         <top>
+            <Label id="header" text="Student List" BorderPane.alignment="CENTER" />
+         </top>
+         <bottom>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <CheckBox id="label" fx:id="ontarioCheckBox" mnemonicParsing="false" onAction="#applyFilter" text="Ontario only" />
+                  <CheckBox id="label" fx:id="honourRollCheckBox" mnemonicParsing="false" onAction="#applyFilter" text="Honour Roll" />
+                  <ComboBox fx:id="areaCodeComboBox" layoutX="333.0" layoutY="30.0" onAction="#applyFilter" promptText="Select Area Code" />
+                  <Label id="label" fx:id="numOfStudentsLabel" text="Number of Students: " />
+               </children>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </HBox>
+         </bottom>
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+      </BorderPane>
+   </children>
+</AnchorPane>
